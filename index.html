@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio | Iván Olmedo - Desarrollador Web</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="hero-section">
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">Iván Olmedo</div>
+                <ul class="nav-links">
+                    <li><a href="#about" class="nav-link">Sobre Mí</a></li>
+                    <li><a href="#technologies" class="nav-link">Tecnologías</a></li>
+                    <li><a href="#projects" class="nav-link">Proyectos</a></li>
+                    <li><a href="#contact" class="nav-link">Contacto</a></li>
+                </ul>
+            </div>
+        </nav>
+        
+        <div class="profile container">
+            <img src="assets/images/profile.jpg" alt="Iván Olmedo" class="profile-img" onerror="this.src='https://via.placeholder.com/150'">
+            <h1>Iván Andrés Olmedo Cayo</h1>
+            <p>Desarrollador Web Frontend</p>
+            <div class="social-links">
+                <a href="https://github.com/Ivanolmedo" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/tu-usuario" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </header>
+    
+    <main class="container">
+        <section id="about">
+            <h2><i class="fas fa-user"></i> Sobre Mí</h2>
+            <p>¡Hola! Soy Iván Olmedo, desarrollador web con formación en Coderhouse donde he completado cursos de Desarrollo Web, JavaScript y ReactJS. Me apasiona crear soluciones digitales innovadoras y estoy en constante aprendizaje.</p>
+            
+            <div class="education">
+                <h3><i class="fas fa-graduation-cap"></i> Formación Académica</h3>
+                <p><strong>Educación Básica:</strong> Saint Jullian College</p>
+                <p><strong>Educación Media:</strong> Liceo René Descartes</p>
+                
+                <h3><i class="fas fa-certificate"></i> Cursos</h3>
+                <ul class="courses-list">
+                    <li>Desarrollo Web Flex - Coderhouse</li>
+                    <li>JavaScript Flex - Coderhouse</li>
+                    <li>ReactJS Flex - Coderhouse</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section id="technologies" class="tech-section">
+            <h2><i class="fas fa-code"></i> Tecnologías</h2>
+            <p>Estas son las tecnologías con las que trabajo actualmente:</p>
+            
+            <div class="tech-grid" id="tech-grid">
+                <!-- Tecnologías se llenarán con JavaScript -->
+            </div>
+        </section>
+        
+        <section id="projects">
+            <h2><i class="fas fa-project-diagram"></i> Mis Proyectos</h2>
+            <p>Aquí puedes ver algunos de mis trabajos recientes:</p>
+            
+            <div class="projects-grid" id="projects-grid">
+                <!-- Proyectos se llenarán con JavaScript -->
+            </div>
+        </section>
+    </main>
+    
+    <footer id="contact">
+        <div class="container">
+            <h2><i class="fas fa-envelope"></i> Contacto</h2>
+            <p>¡Estoy disponible para nuevos proyectos y oportunidades!</p>
+            
+            <div class="contact-info">
+                <a href="mailto:ivanolmedorde@gmail.com"><i class="fas fa-envelope"></i> ivanolmedorde@gmail.com</a>
+                <a href="tel:+56966215217"><i class="fas fa-phone"></i> +56 9 6621 5217</a>
+                <a href="#"><i class="fas fa-map-marker-alt"></i> Viña del Mar, Chile</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal para proyectos -->
+    <div id="project-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body">
+                <div class="modal-image-container">
+                    <img id="modal-image" src="" alt="Proyecto" class="modal-image">
+                </div>
+                <div class="modal-text">
+                    <h2 id="modal-title"></h2>
+                    <div id="modal-description"></div>
+                    <div id="modal-tags" class="modal-tags"></div>
+                    <div class="modal-links">
+                        <a id="modal-demo" href="#" target="_blank" class="modal-link">
+                            <i class="fas fa-external-link-alt"></i> Ver Demo
+                        </a>
+                        <a id="modal-code" href="#" target="_blank" class="modal-link">
+                            <i class="fab fa-github"></i> Ver Código
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
