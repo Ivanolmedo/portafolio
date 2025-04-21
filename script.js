@@ -1,17 +1,38 @@
-// Datos de tecnologías
+// Datos de tecnologías actualizadas
 const technologies = [
     { name: "HTML5", icon: "fab fa-html5", color: "#e34f26" },
     { name: "CSS3", icon: "fab fa-css3-alt", color: "#2965f1" },
     { name: "JavaScript", icon: "fab fa-js", color: "#f7df1e" },
     { name: "React", icon: "fab fa-react", color: "#61dafb" },
+    { name: "Firebase", icon: "fas fa-database", color: "#FFCA28" },
     { name: "Unity", icon: "fas fa-gamepad", color: "#000000" },
     { name: "C#", icon: "fas fa-code", color: "#178600" },
     { name: "Git", icon: "fab fa-git-alt", color: "#f05032" },
-    { name: "Responsive", icon: "fas fa-mobile-alt", color: "#9147ff" }
-]
+    { name: "Responsive", icon: "fas fa-mobile-alt", color: "#9147ff" },
+    { name: "API Maps", icon: "fas fa-map-marked-alt", color: "#4285F4" }
+];
+
 
 // Datos de proyectos (con tu Portafolio 2022 como primer proyecto)
 const projects = [
+    { 
+        title: "React E-commerce", 
+        description: "Tienda online completa con React y Firebase.",
+        longDescription: "Proyecto final del curso de React en Coderhouse. E-commerce completo con backend en Firebase que incluye:",
+        features: [
+            "Autenticación de usuarios con Firebase Auth",
+            "Base de datos en tiempo real con Firestore",
+            "Context API para estado global",
+            "Sistema de órdenes de compra",
+            "Panel de administración",
+            "Filtrado y búsqueda de productos",
+            "Pasarela de pagos integrada"
+        ],
+        tags: ["React", "Firebase", "JavaScript", "Context API"], 
+        image: "assets/images/project-5.jpg",
+        demo: "#",
+        code: "https://github.com/Ivanolmedo/CreaTuLanding-Olmedo.git"
+    },
     { 
         title: "Reposteria", 
         description: "E-commerce con JavaScript para funcionalidades interactivas.",
