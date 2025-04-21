@@ -8,8 +8,25 @@ const technologies = [
     { name: "Responsive", icon: "fas fa-mobile-alt", color: "#9147ff" }
 ];
 
-// Datos de proyectos (actualizados para el modal)
+// Datos de proyectos (con tu Portafolio 2022 como primer proyecto)
 const projects = [
+    { 
+        title: "Portafolio 2022", 
+        description: "Mi primer portafolio profesional desarrollado con HTML y CSS puro.",
+        longDescription: "Este fue mi primer acercamiento al desarrollo web profesional. Realizado completamente con HTML y CSS vanilla, sin frameworks ni librerías. Fue mi proyecto de graduación del curso de Desarrollo Web en Coderhouse. Características principales:",
+        features: [
+            "Diseño responsive básico usando media queries",
+            "Estructura semántica HTML5",
+            "Animaciones CSS con keyframes",
+            "Sección de proyectos con cards básicas",
+            "Formulario de contacto funcional",
+            "Diseño minimalista con paleta morada"
+        ],
+        tags: ["HTML", "CSS", "Responsive Design"], 
+        image: "assets/images/project-1.jpg",
+        demo: "#",
+        code: "https://github.com/Ivanolmedo/Pagina-Freelancer.git"
+    },
     { 
         title: "E-commerce Básico", 
         description: "Tienda online desarrollada con ReactJS y Firebase como backend.",
@@ -23,40 +40,8 @@ const projects = [
         ],
         tags: ["React", "Firebase", "CSS", "Context API"], 
         image: "https://via.placeholder.com/800x500?text=E-commerce+Project",
-        demo: "#",
-        code: "#"
-    },
-    { 
-        title: "Aplicación del Clima", 
-        description: "Aplicación que muestra el clima actual utilizando una API pública.",
-        longDescription: "Aplicación desarrollada con JavaScript vanilla que consume la API de OpenWeatherMap. Características principales:",
-        features: [
-            "Búsqueda por ciudad o ubicación actual",
-            "Pronóstico para 5 días",
-            "Cambio de unidades (Celsius/Fahrenheit)",
-            "Diseño responsive",
-            "Animaciones CSS"
-        ],
-        tags: ["JavaScript", "API", "CSS", "Async/Await"], 
-        image: "https://via.placeholder.com/800x500?text=Weather+App",
-        demo: "#",
-        code: "#"
-    },
-    { 
-        title: "Portafolio Personal", 
-        description: "Primera versión de mi portafolio desarrollado con HTML y CSS.",
-        longDescription: "Este mismo portafolio que estás viendo, desarrollado completamente desde cero. Características:",
-        features: [
-            "Diseño responsive",
-            "Efectos y transiciones CSS",
-            "Modo oscuro/claro (próximamente)",
-            "Navegación fluida",
-            "Modal para proyectos"
-        ],
-        tags: ["HTML", "CSS", "JavaScript", "Responsive"], 
-        image: "https://via.placeholder.com/800x500?text=Portfolio",
-        demo: "#",
-        code: "#"
+        demo: "",
+        code: ""
     }
 ];
 
@@ -120,7 +105,7 @@ function openProjectModal(project) {
     modalTitle.textContent = project.title;
     
     // Construir descripción completa
-    let descriptionHTML = `<p>${project.longDescription || project.description}</p>`;
+    let descriptionHTML = `<p>${project.longDescription}</p>`;
     if (project.features) {
         descriptionHTML += `<ul class="modal-features">`;
         project.features.forEach(feature => {
@@ -131,7 +116,7 @@ function openProjectModal(project) {
     modalDescription.innerHTML = descriptionHTML;
     
     // Imagen del proyecto
-    modalImage.src = project.image || 'https://via.placeholder.com/800x500?text=Project+Image';
+    modalImage.src = project.image;
     modalImage.alt = project.title;
     
     // Tags del proyecto
@@ -144,8 +129,8 @@ function openProjectModal(project) {
     });
     
     // Enlaces
-    modalDemo.href = project.demo || '#';
-    modalCode.href = project.code || '#';
+    modalDemo.href = project.demo;
+    modalCode.href = project.code;
     
     // Mostrar modal y deshabilitar scroll del body
     modal.classList.add('show');
