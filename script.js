@@ -4,12 +4,49 @@ const technologies = [
     { name: "CSS3", icon: "fab fa-css3-alt", color: "#2965f1" },
     { name: "JavaScript", icon: "fab fa-js", color: "#f7df1e" },
     { name: "React", icon: "fab fa-react", color: "#61dafb" },
+    { name: "Unity", icon: "fas fa-gamepad", color: "#000000" },
+    { name: "C#", icon: "fas fa-code", color: "#178600" },
     { name: "Git", icon: "fab fa-git-alt", color: "#f05032" },
     { name: "Responsive", icon: "fas fa-mobile-alt", color: "#9147ff" }
-];
+]
 
 // Datos de proyectos (con tu Portafolio 2022 como primer proyecto)
 const projects = [
+    { 
+        title: "Reposteria", 
+        description: "E-commerce con JavaScript para funcionalidades interactivas.",
+        longDescription: "Proyecto donde implementé JavaScript para crear una experiencia de usuario completa. Lo más destacado:",
+        features: [
+            "Animaciones fluidas con GSAP o vanilla JS",
+            "Calculadora de precios con descuentos",
+            "Formulario de contacto con validación",
+            "Integración de Google Maps API",
+            "Carrito de compras interactivo",
+            "Filtrado de productos en tiempo real",
+            "Efectos de scroll personalizados"
+        ],
+        tags: ["HTML", "CSS", "JavaScript", "API", "Responsive","JavaScript", "GSAP", "Google Maps API", "FormValidation"], 
+        image: "assets/images/project-4.jpg",
+        demo: "https://ivanolmedo.github.io/Ivan-olmedo-coder/",
+        code: "https://github.com/Ivanolmedo/Ivan-olmedo-coder.git"
+    },
+    { 
+        title: "Tienda Online", 
+        description: "Store desarrollada con HTML y CSS mejorando Grid y Flexbox.",
+        longDescription: "Segundo proyecto web donde profundicé en el uso de layouts modernos. Lo que aprendí y apliqué:",
+        features: [
+            "Maquetación avanzada con CSS Grid",
+            "Diseño flexible con Flexbox",
+            "Efectos hover mejorados",
+            "Sistema de cards para productos",
+            "Diseño responsive pulido",
+            "Organización de código CSS modular"
+        ],
+        tags: ["HTML", "CSS", "Grid", "Flexbox", "Responsive"],
+        image: "assets/images/project-3.jpg",
+        demo: "#",
+        code: "https://github.com/Ivanolmedo/FrontEnd-Store.git"
+    },
     { 
         title: "Portafolio 2022", 
         description: "Mi primer portafolio profesional desarrollado con HTML y CSS puro.",
@@ -28,20 +65,22 @@ const projects = [
         code: "https://github.com/Ivanolmedo/Pagina-Freelancer.git"
     },
     { 
-        title: "E-commerce Básico", 
-        description: "Tienda online desarrollada con ReactJS y Firebase como backend.",
-        longDescription: "Este proyecto fue desarrollado como parte de mi formación en React. Utilicé Firebase para el backend, implementando autenticación de usuarios, base de datos en tiempo real y funciones serverless. El e-commerce incluye:",
+        title: "FPS 3D", 
+        description: "Shooter en primera persona con física de destrucción de objetos.",
+        longDescription: "Mi primer proyecto 3D en Unity donde exploré el desarrollo de shooters en primera persona y sistemas de física. Aunque no incluye enemigos, el juego se centra en:",
         features: [
-            "Carrito de compras interactivo",
-            "Sistema de autenticación con Firebase Auth",
-            "Panel de administración para productos",
-            "Búsqueda y filtrado de productos",
-            "Pasarela de pagos simulada"
+            "Movimiento FPS estándar (WASD + mouse)",
+            "Sistema de disparos con efectos de partículas",
+            "Física de destrucción de objetos (Rigidbody)",
+            "Entorno 3D completamente navegable",
+            "Sistema de recarga de armas",
+            "Efectos de sonido básicos",
+            "Optimización para PC de gama media"
         ],
-        tags: ["React", "Firebase", "CSS", "Context API"], 
-        image: "https://via.placeholder.com/800x500?text=E-commerce+Project",
-        demo: "",
-        code: ""
+        tags: ["Unity", "C#", "3D Game", "FPS", "Physics"], 
+        image: "assets/images/project-2.jpg",
+        demo: "#",
+        code: "https://github.com/Ivanolmedo/Sci-Fi-Demo.git"
     }
 ];
 
