@@ -135,8 +135,8 @@ function loadProjects() {
         ).join('');
         
         projectCard.innerHTML = `
-            <div class="project-image">
-                ${project.title}
+            <div class="project-image" style="background-image: url('${project.image}')">
+                <div class="project-image-text">${project.title}</div>
             </div>
             <div class="project-info">
                 <h3 class="project-title">${project.title}</h3>
@@ -145,7 +145,6 @@ function loadProjects() {
             </div>
         `;
         
-        // Agregar evento de clic para abrir el modal
         projectCard.addEventListener('click', () => openProjectModal(project));
         projectsGrid.appendChild(projectCard);
     });
