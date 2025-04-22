@@ -1,4 +1,4 @@
-// Datos de tecnologías actualizadas
+// Datos
 const technologies = [
     { name: "HTML5", icon: "fab fa-html5", color: "#e34f26" },
     { name: "CSS3", icon: "fab fa-css3-alt", color: "#2965f1" },
@@ -12,8 +12,6 @@ const technologies = [
     { name: "API Maps", icon: "fas fa-map-marked-alt", color: "#4285F4" }
 ];
 
-
-// Datos de proyectos (con tu Portafolio 2022 como primer proyecto)
 const projects = [
     { 
         title: "React E-commerce", 
@@ -38,15 +36,14 @@ const projects = [
         description: "E-commerce con JavaScript para funcionalidades interactivas.",
         longDescription: "Proyecto donde implementé JavaScript para crear una experiencia de usuario completa. Lo más destacado:",
         features: [
-            "Animaciones fluidas con GSAP o vanilla JS",
+            "Animaciones fluidas con JavaScript",
             "Calculadora de precios con descuentos",
             "Formulario de contacto con validación",
             "Integración de Google Maps API",
             "Carrito de compras interactivo",
-            "Filtrado de productos en tiempo real",
-            "Efectos de scroll personalizados"
+            "Filtrado de productos en tiempo real"
         ],
-        tags: ["HTML", "CSS", "JavaScript", "API", "Responsive","JavaScript", "GSAP", "Google Maps API", "FormValidation"], 
+        tags: ["HTML", "CSS", "JavaScript", "API"], 
         image: "assets/images/project-4.jpg",
         demo: "https://ivanolmedo.github.io/Ivan-olmedo-coder/",
         code: "https://github.com/Ivanolmedo/Ivan-olmedo-coder.git"
@@ -60,10 +57,9 @@ const projects = [
             "Diseño flexible con Flexbox",
             "Efectos hover mejorados",
             "Sistema de cards para productos",
-            "Diseño responsive pulido",
-            "Organización de código CSS modular"
+            "Diseño responsive pulido"
         ],
-        tags: ["HTML", "CSS", "Grid", "Flexbox", "Responsive"],
+        tags: ["HTML", "CSS", "Grid", "Flexbox"],
         image: "assets/images/project-3.jpg",
         demo: "#",
         code: "https://github.com/Ivanolmedo/FrontEnd-Store.git"
@@ -71,16 +67,14 @@ const projects = [
     { 
         title: "Portafolio 2022", 
         description: "Mi primer portafolio profesional desarrollado con HTML y CSS puro.",
-        longDescription: "Este fue mi primer acercamiento al desarrollo web profesional. Realizado completamente con HTML y CSS vanilla, sin frameworks ni librerías. Fue mi proyecto de graduación del curso de Desarrollo Web en Coderhouse. Características principales:",
+        longDescription: "Primer acercamiento al desarrollo web profesional. Realizado con HTML y CSS vanilla. Características:",
         features: [
-            "Diseño responsive básico usando media queries",
+            "Diseño responsive con media queries",
             "Estructura semántica HTML5",
-            "Animaciones CSS con keyframes",
-            "Sección de proyectos con cards básicas",
-            "Formulario de contacto funcional",
-            "Diseño minimalista con paleta morada"
+            "Animaciones CSS",
+            "Formulario de contacto funcional"
         ],
-        tags: ["HTML", "CSS", "Responsive Design"], 
+        tags: ["HTML", "CSS", "Responsive"], 
         image: "assets/images/project-1.jpg",
         demo: "#",
         code: "https://github.com/Ivanolmedo/Pagina-Freelancer.git"
@@ -88,166 +82,122 @@ const projects = [
     { 
         title: "FPS 3D", 
         description: "Shooter en primera persona con física de destrucción de objetos.",
-        longDescription: "Mi primer proyecto 3D en Unity donde exploré el desarrollo de shooters en primera persona y sistemas de física. Aunque no incluye enemigos, el juego se centra en:",
+        longDescription: "Mi primer proyecto 3D en Unity donde exploré el desarrollo de shooters en primera persona:",
         features: [
-            "Movimiento FPS estándar (WASD + mouse)",
-            "Sistema de disparos con efectos de partículas",
-            "Física de destrucción de objetos (Rigidbody)",
-            "Entorno 3D completamente navegable",
-            "Sistema de recarga de armas",
-            "Efectos de sonido básicos",
-            "Optimización para PC de gama media"
+            "Movimiento FPS estándar",
+            "Sistema de disparos con partículas",
+            "Física de destrucción de objetos",
+            "Entorno 3D navegable"
         ],
-        tags: ["Unity", "C#", "3D Game", "FPS", "Physics"], 
+        tags: ["Unity", "C#", "3D Game", "FPS"], 
         image: "assets/images/project-2.jpg",
         demo: "#",
         code: "https://github.com/Ivanolmedo/Sci-Fi-Demo.git"
     }
 ];
 
-// Función para cargar tecnologías
-function loadTechnologies() {
-    const techGrid = document.getElementById('tech-grid');
-    
-    technologies.forEach(tech => {
-        const techCard = document.createElement('div');
-        techCard.className = 'tech-card';
-        techCard.innerHTML = `
+// DOM Elements
+const elements = {
+    techGrid: document.getElementById('tech-grid'),
+    projectsGrid: document.getElementById('projects-grid'),
+    modal: document.getElementById('project-modal'),
+    modalTitle: document.getElementById('modal-title'),
+    modalDescription: document.getElementById('modal-description'),
+    modalImage: document.getElementById('modal-image'),
+    modalTags: document.getElementById('modal-tags'),
+    modalDemo: document.getElementById('modal-demo'),
+    modalCode: document.getElementById('modal-code'),
+    navbar: document.querySelector('.navbar'),
+    heroSection: document.querySelector('.hero-section'),
+    navLinks: document.querySelectorAll('.nav-link')
+};
+
+// Funciones principales
+const renderTechnologies = () => {
+    elements.techGrid.innerHTML = technologies.map(tech => `
+        <div class="tech-card">
             <div class="tech-icon" style="color: ${tech.color}">
                 <i class="${tech.icon}"></i>
             </div>
             <h3>${tech.name}</h3>
-        `;
-        techGrid.appendChild(techCard);
-    });
-}
+        </div>
+    `).join('');
+};
 
-// Función para cargar proyectos
-function loadProjects() {
-    const projectsGrid = document.getElementById('projects-grid');
-    
-    projects.forEach(project => {
-        const projectCard = document.createElement('div');
-        projectCard.className = 'project-card';
-        
-        const tagsHTML = project.tags.map(tag => 
-            `<span class="project-tag">${tag}</span>`
-        ).join('');
-        
-        projectCard.innerHTML = `
+const renderProjects = () => {
+    elements.projectsGrid.innerHTML = projects.map(project => `
+        <div class="project-card">
             <div class="project-image" style="background-image: url('${project.image}')">
                 <div class="project-image-text">${project.title}</div>
             </div>
             <div class="project-info">
                 <h3 class="project-title">${project.title}</h3>
                 <p>${project.description}</p>
-                <div class="project-tags">${tagsHTML}</div>
+                <div class="project-tags">
+                    ${project.tags.map(tag => `<span class="project-tag">${tag}</span>`).join('')}
+                </div>
             </div>
-        `;
-        
-        projectCard.addEventListener('click', () => openProjectModal(project));
-        projectsGrid.appendChild(projectCard);
-    });
-}
+        </div>
+    `).join('');
 
-// Función para abrir el modal del proyecto
-function openProjectModal(project) {
-    const modal = document.getElementById('project-modal');
-    const modalTitle = document.getElementById('modal-title');
-    const modalDescription = document.getElementById('modal-description');
-    const modalImage = document.getElementById('modal-image');
-    const modalTags = document.getElementById('modal-tags');
-    const modalDemo = document.getElementById('modal-demo');
-    const modalCode = document.getElementById('modal-code');
-    
-    // Llenar el modal con los datos del proyecto
-    modalTitle.textContent = project.title;
-    
-    // Construir descripción completa
-    let descriptionHTML = `<p>${project.longDescription}</p>`;
-    if (project.features) {
-        descriptionHTML += `<ul class="modal-features">`;
-        project.features.forEach(feature => {
-            descriptionHTML += `<li>${feature}</li>`;
-        });
-        descriptionHTML += `</ul>`;
-    }
-    modalDescription.innerHTML = descriptionHTML;
-    
-    // Imagen del proyecto
-    modalImage.src = project.image;
-    modalImage.alt = project.title;
-    
-    // Tags del proyecto
-    modalTags.innerHTML = '';
-    project.tags.forEach(tag => {
-        const tagElement = document.createElement('span');
-        tagElement.className = 'modal-tag';
-        tagElement.textContent = tag;
-        modalTags.appendChild(tagElement);
+    document.querySelectorAll('.project-card').forEach((card, index) => {
+        card.addEventListener('click', () => openProjectModal(projects[index]));
     });
+};
+
+const openProjectModal = (project) => {
+    elements.modalTitle.textContent = project.title;
+    elements.modalDescription.innerHTML = `
+        <p>${project.longDescription}</p>
+        <ul class="modal-features">
+            ${project.features.map(feature => `<li>${feature}</li>`).join('')}
+        </ul>
+    `;
+    elements.modalImage.src = project.image;
+    elements.modalImage.alt = project.title;
+    elements.modalTags.innerHTML = project.tags.map(tag => 
+        `<span class="modal-tag">${tag}</span>`
+    ).join('');
+    elements.modalDemo.href = project.demo;
+    elements.modalCode.href = project.code;
     
-    // Enlaces
-    modalDemo.href = project.demo;
-    modalCode.href = project.code;
-    
-    // Mostrar modal y deshabilitar scroll del body
-    modal.classList.add('show');
+    elements.modal.classList.add('show');
     document.body.style.overflow = 'hidden';
-}
+};
 
-// Función para cerrar el modal
-function closeProjectModal() {
-    const modal = document.getElementById('project-modal');
-    modal.classList.remove('show');
+const closeProjectModal = () => {
+    elements.modal.classList.remove('show');
     document.body.style.overflow = 'auto';
-}
+};
 
-// Configuración de navegación
-function setupNavigation() {
-    const navbar = document.querySelector('.navbar');
-    const heroSection = document.querySelector('.hero-section');
-    const heroHeight = heroSection.offsetHeight;
-    const navLinks = document.querySelectorAll('.nav-link');
+const setupNavigation = () => {
+    const heroHeight = elements.heroSection.offsetHeight;
     
-    // Scroll para navbar flotante
     window.addEventListener('scroll', () => {
-        if (window.scrollY > heroHeight * 0.7) {
-            document.body.classList.add('scrolled');
-            navbar.classList.add('scrolled');
-        } else {
-            document.body.classList.remove('scrolled');
-            navbar.classList.remove('scrolled');
-        }
+        const isScrolled = window.scrollY > heroHeight * 0.7;
+        document.body.classList.toggle('scrolled', isScrolled);
+        elements.navbar.classList.toggle('scrolled', isScrolled);
         
-        // Resaltar sección activa
         const scrollPosition = window.scrollY + 100;
-        
         document.querySelectorAll('section').forEach(section => {
             const sectionTop = section.offsetTop;
             const sectionHeight = section.offsetHeight;
             const sectionId = section.getAttribute('id');
             
             if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href') === `#${sectionId}`) {
-                        link.classList.add('active');
-                    }
+                elements.navLinks.forEach(link => {
+                    link.classList.toggle('active', link.getAttribute('href') === `#${sectionId}`);
                 });
             }
         });
     });
     
-    // Scroll suave para enlaces
-    navLinks.forEach(link => {
+    elements.navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
-            const targetId = link.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
-            
+            const targetSection = document.querySelector(link.getAttribute('href'));
             if (targetSection) {
-                const offset = navbar.classList.contains('scrolled') ? 70 : 20;
+                const offset = elements.navbar.classList.contains('scrolled') ? 70 : 20;
                 window.scrollTo({
                     top: targetSection.offsetTop - offset,
                     behavior: 'smooth'
@@ -255,33 +205,19 @@ function setupNavigation() {
             }
         });
     });
-}
+};
 
 // Inicialización
-function init() {
-    loadTechnologies();
-    loadProjects();
+const init = () => {
+    renderTechnologies();
+    renderProjects();
     setupNavigation();
     
-    // Evento para cerrar modal
     document.querySelector('.close-modal').addEventListener('click', closeProjectModal);
-    
-    // Cerrar modal al hacer clic fuera del contenido
-    document.getElementById('project-modal').addEventListener('click', (e) => {
-        if (e.target === document.getElementById('project-modal')) {
-            closeProjectModal();
-        }
-    });
-    
-    // Cerrar modal con tecla ESC
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-            closeProjectModal();
-        }
-    });
+    elements.modal.addEventListener('click', (e) => e.target === elements.modal && closeProjectModal());
+    document.addEventListener('keydown', (e) => e.key === 'Escape' && closeProjectModal());
     
     console.log('Portafolio cargado correctamente');
-}
+};
 
-// Esperar a que el DOM esté listo
 document.addEventListener('DOMContentLoaded', init);
