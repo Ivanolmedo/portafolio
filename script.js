@@ -3,6 +3,8 @@ const technologies = [
     { name: "HTML5", icon: "fab fa-html5", color: "#e34f26" },
     { name: "CSS3", icon: "fab fa-css3-alt", color: "#2965f1" },
     { name: "JavaScript", icon: "fab fa-js", color: "#f7df1e" },
+    { name: "Python", icon: "fab fa-python", color: "#3776AB" },
+    { name: "MySQL", icon: "fas fa-database", color: "#4479A1" },
     { name: "React", icon: "fab fa-react", color: "#61dafb" },
     { name: "Firebase", icon: "fas fa-database", color: "#FFCA28" },
     { name: "Unity", icon: "fas fa-gamepad", color: "#000000" },
@@ -11,7 +13,6 @@ const technologies = [
     { name: "Responsive", icon: "fas fa-mobile-alt", color: "#9147ff" },
     { name: "API Maps", icon: "fas fa-map-marked-alt", color: "#4285F4" }
 ];
-
 const projects = [
     { 
         title: "React E-commerce", 
